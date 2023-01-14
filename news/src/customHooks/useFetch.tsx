@@ -6,18 +6,11 @@ const useFetch = (searchParams: string = '') => {
         data: undefined,
         error: undefined
     })
-    const apiKey = '27117a47be9c4555a44995e00b4c9032'
-   const url = 'https://newsapi.org/v2/everything?' +
-  `q=${searchParams}&` +
-  `searchIn=title&` +
-  'from=2023-01-11&' +
-  'sortBy=popularity&' +
-  `apiKey=${apiKey}`;
-
+   const url = `https://api.spaceflightnewsapi.net/v3/articles/?_limit=100${searchParams.length !== 0 ? '&title_contains=' + searchParams : ''}`.trim()
     function fetchNow(url: string){
         setStatus({loading: true, data: undefined, error: undefined})
         axios.get(url).then((res) => {
-            setStatus({loading: false, data: res.data.articles, error: undefined})
+            setStatus({loading: false, data: res.data, error: undefined})
         }).catch((error) => {
             setStatus({loading: false,data: undefined, error: error})
         })

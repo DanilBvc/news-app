@@ -11,17 +11,14 @@ export interface NewsProps {
     error: undefined | string
 }
 export interface StateElement {
-    source: {
-        id: string | null,
-        name: string
-    },
-    author: string | null,
-    title: string,
-    description: string,
-    url: string,
-    urlToImage: string,
-    publishedAt: string,
-    content: string
+   id: number,
+   imageUrl: string,
+   newsSite: string,
+   publishedAt: string,
+   summary: string,
+   title: string,
+   updatedAt: string,
+   url: string
 }
 export interface Store {
     storeState: StateElement[] | [],

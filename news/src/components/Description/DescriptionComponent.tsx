@@ -7,7 +7,7 @@ function DescriptionComponent() {
   const {getNewsByTitle, currentCardTitle} = useContext(StoreContext)
   const DescriptionStyle = {
     background: `url(${
-      getNewsByTitle(currentCardTitle)?.urlToImage
+      getNewsByTitle(currentCardTitle)?.imageUrl
     }) no-repeat center center fixed`,
     backgroundSize: 'cover',
     height: '145px',
@@ -22,7 +22,7 @@ function DescriptionComponent() {
           )}
           {currentCardTitle === undefined ? null : (
             <div className='container__wrapper-content'>
-              { getNewsByTitle(currentCardTitle)?.content.split('[')[0]}  <a href={getNewsByTitle(currentCardTitle)?.url}>Read more here</a>
+              { getNewsByTitle(currentCardTitle)?.summary}  <a href={getNewsByTitle(currentCardTitle)?.url}>Read more here</a>
             </div>
           )}
         </div>

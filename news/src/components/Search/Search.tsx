@@ -17,7 +17,7 @@ function Search() {
       }
       onKeyDown={(e) => {e.key === 'Enter' ? handleSearch() : console.log()}}
         value={inputValueHook}
-        placeholder="The most successful IT companies in 2020"
+        placeholder="microsoft"
         className="input-search"
       />
     </div>

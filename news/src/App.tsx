@@ -11,7 +11,7 @@ export const StoreContext = createContext<Store>(defaultStore);
 function App() {
   const [storeState, setStore] = useState<StateElement[]>([]);
   const [search, setSearch] = useState<string>('');
-  const [inputValueHook, setInputValueHook] = useState<string>('The most successful IT companies in 2020');
+  const [inputValueHook, setInputValueHook] = useState<string>('microsoft');
   const [currentCardTitle, setCurrentCard] = useState('');
   let localStoreState = window.localStorage.getItem('storeState')
   let localCurrentCardTitle = window.localStorage.getItem('currentCardTitle')
